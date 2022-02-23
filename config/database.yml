@@ -1,0 +1,26 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  port: 5432
+  pool: 5
+
+development:
+  <<: *default
+  database: rtss_development
+  username: postgres
+  password: master
+  host: localhost
+
+test:
+  <<: *default
+  database: rtss_test
+  username: postgres
+  password: master
+  host: localhost
+
+# production:
+#   <<: *default
+#   database: rtss_production
+#   username: rtss
+#   password: <%= ENV["RTSS_DATABASE_PASSWORD"] %>
